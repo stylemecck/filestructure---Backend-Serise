@@ -47,6 +47,42 @@ README.md # Project documentation
 git clone https://github.com/stylemecck/filestructure---Backend-Serise.git
 cd filestructure---Backend-Serise 
 ```
-# 👨‍💻 Author
-### Made with ❤️ by Satyam Kumar (StyleMecck)
-### If you found this useful, consider ⭐ starring the repo!
+### 1.  Install Dependencies
+```bash
+npm install
+```
+### 3.  Configure .env
+```ini
+PORT= 8000
+CORS_ORIGIN=*
+MONGODB_URI = database url
+ACCESS_TOKEN_SECRET = 
+ACCESS_TOKEN_EXPIRY = 2h
+REFRESH_TOKEN_SECRET = 
+REFRESH_TOKEN_EXPIRY = 10d
+CLOUDINARY_CLOUD_NAME = name 
+CLOUDINARY_API_KEY = your api key
+LOUDINARY_API_SECRET = your secret key
+```
+### 4. Run the Server
+```bash
+npm run start
+```
+
+## 🚧 Future Additions (Optional)
+- ✅ Swagger API Docs
+- ✅ Docker support
+- ✅ JWT-based authentication
+- ✅ Unit testing setup (Jest/Mocha)
+- ✅ Logger integration (Winston/Morgan)
+
+
+## 🧠 Best For 
+- Learning backend project architecture
+- Team-based API development
+- Quick-start REST API boilerplate
+- College/minor/major backend projects
+
+## 👨‍💻 Author
+##### Made with ❤️ by Satyam Kumar (StyleMecck)
+If you found this useful, consider ⭐ starring the repo!
