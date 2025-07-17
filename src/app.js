@@ -13,4 +13,12 @@ app.use(express.urlencoded({extended: true, limit: "20kb"})) //url se data lene 
 app.use(express.static('public')) //static file lene ke liye use hota hai
 app.use(cookieParser()) // ye use hota hai user ke browser me cookie store kar sake aur uska use kar sake ye secure hota hai, aur usko shir wahi database access kar sakra hai.
 
+
+//Routes
+import userRoute from "./routers/user.routes.js"
+
+
+//routes declearation 
+app.use("/api/v1/users", userRoute) //https://localhost:8000/api/v1/users/register
+
 export { app }
