@@ -9,7 +9,7 @@ Welcome to the **Backend Structure Series**! This project provides a clean, scal
 ---
 
 ## 📁 Folder Structure
-
+```
 src/
 ├── config/ # App configuration (DB, environment, etc.)
 ├── controllers/ # Request handling logic
@@ -24,7 +24,7 @@ src/
 .env # Environment variables
 package.json # Project metadata and scripts
 README.md # Project documentation
-
+```
 
 ---
 
