@@ -43,9 +43,14 @@ const registerUser = asyncHandler( async (req, res) =>{
             throw new ApiError(409, "User already exist");
         }
         
-        const avatarLocalPath = req.files?.avatar[0]?.path;
-        // console.log ("avatar: ", avatar);
-        const coverImageLocalPath = req.files?.coverImage[0]?.path;
+        const avatarLocalPath = req.files?.avatar?.[0]?.path;
+        // const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
+
+        let coverImageLocalPath;
+
+        if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0){
+            coverImageLocalPath = req.files?.coverImage?.[0]?.path;
+        }
 
 
         console.log("req.files: ", req.files);
@@ -55,14 +60,19 @@ const registerUser = asyncHandler( async (req, res) =>{
             throw new ApiError(400, "Avtar file is required local path")
         }
 
-        const avatar = await uploadOnCloudinary(avatarLocalPath)
-        if(coverImageLocalPath){
-                    const coverImage = await uploadOnCloudinary(coverImageLocalPath);
-        }
-
+        console.log("Uploading avatar from path:", avatarLocalPath);
+        const avatar = await uploadOnCloudinary(avatarLocalPath);
+        
+        console.log("Cloudinary upload result:", avatar);
+        
         if(!avatar){
             throw new ApiError(400, "Avtar file is required clode")
         }
+        
+        const coverImage = await uploadOnCloudinary(coverImageLocalPath);
+        
+
+       
         //user creationa and data base entry
         const user = await User.create(
             {
