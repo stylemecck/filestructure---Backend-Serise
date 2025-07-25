@@ -56,16 +56,16 @@ cd toutoria-backend
 
 
 ### 2. Install Dependencies
-
+```
 npm install
-
+```
 
 ### 3. Set Up Environment Variables
 
 Copy `.env.example` to `.env` and fill in your secrets. **Never commit `.env` to version control!**
 
 #### Example `.env` file
-
+```
 PORT=8000
 CORS_ORIGIN=*
 MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.<host>.mongodb.net/<db>?retryWrites=true&w=majority
@@ -89,12 +89,12 @@ NODE_ENV=development
 Open your terminal and run:  
 
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-
+```
 
 ### 4. Start the Server
-
+```
 npm run start
-
+```
 
 ### 5. Access in Development
 
@@ -105,18 +105,18 @@ npm run start
 ---
 
 ## 🧪 Testing
-
+```
 npm test
-
+```
 
 ---
 
 ## 🐳 Docker Support
 
 **Build and run with Docker:**
-
+```
 docker-compose up --build
-
+```
 
 Your app will be available at `http://localhost:8000`.  
 DB, app, and other services are managed via `docker-compose.yml`.
