@@ -50,10 +50,10 @@ README.md
 ## 🛠️ Getting Started
 
 ### 1. Clone the Repository
-
+```
 git clone https://github.com/stylemecck/toutoria-backend.git
 cd toutoria-backend
-
+```
 
 ### 2. Install Dependencies
 ```
@@ -83,11 +83,11 @@ CLOUDINARY_API_SECRET=your_api_secret
 
 Optional
 NODE_ENV=development
-
+```
 
 **How to generate secure JWT secrets:**  
 Open your terminal and run:  
-
+```
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
