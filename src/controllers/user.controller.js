@@ -7,8 +7,14 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 const generateAccessTokenAndRefreshToken = async (userId) => {
     try {
         const user = await User.findById(userId)
-        const accessToken = user.generateAccessToken()
-        const refreshToken = user.generateRefreshToken()
+        console.log("userId:", user); // for debug
+        if (!user) throw new ApiError(404, "User not found");
+
+        console.log("generateAccessToken:", typeof user.generateAccessToken); // should be 'function' for debug
+        console.log("generateRefreshToken:", typeof user.generateRefreshToken); // should be 'function' for debug
+        const accessToken = user.generateAccessToken();
+        const refreshToken = user.generateRefreshToken();
+
 
         user.refreshToken = refreshToken
         await user.save({ validateBeforeSave: false })

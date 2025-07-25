@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
-import jsonwebtoken from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema(
@@ -82,14 +82,15 @@ userSchema.methods.generateAccessToken = function () {
   );
 };
 
-userSchema.method.generateRefreshToken = function () {
+userSchema.methods.generateRefreshToken = function () {
+  console.log("generateRefreshToken called"); // debug " yeha pe medthod ka typo mistake tha "method ❌ methods ✅"
   jwt.sign(
         {
-             _id: this._id,
+          _id: this._id,
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
-            expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
+            expiresIn: process.env.REFRESH_TOKEN_EXPIRY || "10d",
         }
     );
 };
