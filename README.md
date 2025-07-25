@@ -6,7 +6,7 @@ Perfect for **learning, teams, college projects, and quick REST API boilerplates
 ---
 
 ## 📁 Project Structure
-
+```
 src/
 ├── config/ # App, DB, and environment configurations
 ├── controllers/ # Route handlers (MVC controllers)
@@ -27,7 +27,7 @@ docker-compose.yml # Local development with DB
 CONTRIBUTING.md # Contribution guidelines
 package.json
 README.md
-
+```
 
 ---
 
@@ -51,8 +51,8 @@ README.md
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-username/project-name.git
-cd project-name
+git clone https://github.com/stylemecck/toutoria-backend.git
+cd toutoria-backend
 
 
 ### 2. Install Dependencies
